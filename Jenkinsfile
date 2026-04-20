@@ -20,6 +20,14 @@ pipeline {
                 }
             }
         }
+        stage('Security Scan (Trivy)') {
+            steps {
+                script {
+                    // فحص الصورة والبحث عن الثغرات الخطيرة فقط
+                    // إذا وجد ثغرات من نوع CRITICAL سيقوم بفشل البناء (exit code 1)
+                    sh "docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image --severity CRITICAL --exit-code 1 my-app:1.2"                }
+            }
+        }
         
         stage('Push to ECR') {
             steps {
