@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     // بناء الصورة وعمل Tag لها
-                    sh "docker build -t my-app  ."
+                    sh "docker build -t my-app:1.2  ."
                     sh "docker tag my-app:1.2 612356096472.dkr.ecr.us-east-1.amazonaws.com/my-app:1.2"
                 }
             }
