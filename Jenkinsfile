@@ -32,10 +32,5 @@ pipeline {
         }
     }
     
-    post {
-        always {
-            // تنظيف الصور محلياً لتوفير مساحة السيرفر
-            sh "docker rmi -f ${REPO_NAME}:latest ${ECR_URI}/${REPO_NAME}:${IMAGE_TAG} || true"
-        }
-    }
+
 }
