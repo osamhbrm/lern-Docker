@@ -1,0 +1,16 @@
+ name:  First WorkFlow
+
+ on:
+  push:
+   branches: 
+      - main
+
+ jobs: 
+   example-jops:
+     runs-on: ubuntu-latest
+
+     steps: 
+      - name: prfint
+        run: echo"Welcome"
+ 
+         
