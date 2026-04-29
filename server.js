@@ -6,7 +6,7 @@ const app = express();
 const port = 3000;
 
 // إعدادات قاعدة البيانات
-const url = 'mongodb://admin:adminadmin@mongo';
+const url = 'mongodb://admin:mongodb@mongodb-service';
 const client = new MongoClient(url);
 const dbName = 'MyFirstProject';
 
